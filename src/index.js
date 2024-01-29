@@ -8,33 +8,37 @@ console.log(gsap)
 //Scene
 const scene = new THREE.Scene()
 
-//Group
-
-const group = new THREE.Group()
 
 //Mesh
-const geometry = new THREE.BoxGeometry(1, 1, 1);
+const geometry = new THREE.BoxGeometry(0.5,0.5,0.5);
 const material = new THREE.MeshBasicMaterial({color: "purple"});
-const mesh = new THREE.Mesh(geometry, material);
+const purleMesh = new THREE.Mesh(geometry, material);
+purleMesh.position.x = 1;
 
 //Mesh2
-const material2 = new THREE.MeshBasicMaterial({color: 'green'})
-const mesh2 = new THREE.Mesh(geometry, material2);
-mesh2.position.y = 2;
+const material2 = new THREE.MeshBasicMaterial({color: 'yellow'})
+const yellowMesh = new THREE.Mesh(geometry, material2);
+yellowMesh.position.x = -1;
 
-group.add(mesh, mesh2)
-group.position.x = 1;
+//Mesh3
+const material3 = new THREE.MeshBasicMaterial({color: 'green'});
+const greenMesh = new THREE.Mesh(geometry, material3);
 
-scene.add(mesh);
 
-gsap.to(mesh.position, {duration: 1, delay: 1, x:1})
-gsap.to(mesh.position, {duration: 2, delay: 2, x:-1})
+//Mesh4
+const material4 = new THREE.MeshBasicMaterial({color: "white"});
+const whiteMesh = new THREE.Mesh(geometry, material4);
+whiteMesh.position.set(1,1,0);
 
-//AxesHelper
-const axesHelper = new THREE.AxesHelper(4)
+//Mesh5
+const material5 = new THREE.MeshBasicMaterial({color: "pink"});
+const pinkMesh = new THREE.Mesh(geometry, material5);
+pinkMesh.position.set(-1,-1, 0);
 
-// scene.add(axesHelper)
-
+//Mesh6
+const material6 = new THREE.MeshBasicMaterial({color: "blue"});
+const blueMesh = new THREE.Mesh(geometry, material6);
+blueMesh.position.y = 1;
 //Camera
 const aspect = {
  width: window.innerWidth,
